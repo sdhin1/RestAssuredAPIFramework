@@ -43,11 +43,7 @@ public class TokenManager {
 		formParams.put("refresh_token", ConfigLoader.getInstance().getRefreshToken());
 		formParams.put("grant_type", ConfigLoader.getInstance().getGrantType());
 		
-		System.out.println("Form Parameters: "+ formParams);
-		
 		Response response = RestResource.postAccount(formParams);
-		
-		System.out.println("POST Request Response to Renew Token: "+ response.asString());
 		
 		if(response.statusCode() != 200) {
 			throw new RuntimeException("ABORT - Renew Token failed !!!");
