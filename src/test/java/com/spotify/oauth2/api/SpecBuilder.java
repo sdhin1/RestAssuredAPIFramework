@@ -14,6 +14,8 @@ public class SpecBuilder {
 	
 	public static RequestSpecification getRequestSpec() {
 		
+		System.out.println("BASE_URI: "+ System.getProperty("BASE_URI"));
+		
 		return new RequestSpecBuilder().
 				setBaseUri(System.getProperty("BASE_URI")).
 				//setBaseUri("https://api.spotify.com").
@@ -26,6 +28,8 @@ public class SpecBuilder {
 	}
 	
 	public static RequestSpecification getAccountRequestSpec() {
+		
+		System.out.println("ACCOUNT_BASE_URI: "+ System.getProperty("ACCOUNT_BASE_URI"));
 		
 		return new RequestSpecBuilder().
 				setBaseUri(System.getProperty("ACCOUNT_BASE_URI")).
