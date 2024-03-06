@@ -42,6 +42,8 @@ public class TokenManager {
 		formParams.put("refresh_token", ConfigLoader.getInstance().getRefreshToken());
 		formParams.put("grant_type", ConfigLoader.getInstance().getGrantType());
 		
+		System.out.println("Form Parameters: "+ formParams);
+		
 		Response response = RestResource.postAccount(formParams);
 		
 		if(response.statusCode() != 200) {
