@@ -46,6 +46,8 @@ public class TokenManager {
 		
 		Response response = RestResource.postAccount(formParams);
 		
+		System.out.println("POST Request Response to Renew Token: "+ response.asString());
+		
 		if(response.statusCode() != 200) {
 			throw new RuntimeException("ABORT - Renew Token failed !!!");
 		}
